@@ -3,12 +3,30 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+
+var s=0;var k=3;
+function handleSubmit(a) {
+    const ss= [ "i have been an illustrator for over 15 years, but only recently been designing NFT’s. ","i have been an illustrator for over 15 years, but only recently been designing NFT’s. previously design manager at apple but now i am designing for th...","i have been an illustrator for over 15 years, but only recently been designing NFT’s. ","I have changed!4"];
+
+    if(a===1){
+            document.getElementById("demo").innerHTML= ss[s];
+            document.getElementById("demo2").innerHTML= ss[s];
+            s+=1;
+            if(s>3) s=0;
+    }
+    if(a===2){
+        document.getElementById("demo").innerHTML= ss[k];
+        document.getElementById("demo2").innerHTML= ss[k];
+        k-=1;
+        if(k<0) k=3;
+    }
+  }
 function Next(props){
     return(
       // <h1 onClick={props.onClick}>hhh</h1>
       <button className="btnnext" onClick={() => {
        props.onClick();
-        // handleSubmit(1);
+        handleSubmit(1);
       }}><img src="/assets/img/btn-next.jpg" alt="" /></button>
     );
   }
@@ -17,11 +35,17 @@ function Next(props){
       // <h1 onClick={props.onClick}>hhh</h1>
       <button className="btnpre" onClick={() => {
         props.onClick();
-        //  handleSubmit(2);
+         handleSubmit(2);
        }}><img src="/assets/img/btn-pre.jpg" alt="" /></button>
     );
   }
- 
+  var s2=1;
+ function toggleclick(){
+  s2+=1;
+  if(s2%2===0){
+    document.getElementById("myID").classList.add("show-example");
+  }else document.getElementById("myID").classList.remove("show-example");
+ }
 export default function Home() {
     const renderSlides = () =>
     [
@@ -122,17 +146,18 @@ export default function Home() {
         {num}
       </div>
     ));
+
   return (
    <div>
      <div className="container">
     {/* <div class="header">Heder</div> */}
     <div className="header">
-      <div id="toggle">
+      <div id="toggle"onClick={toggleclick}>
         <i className="fa-solid fa-bars clsstpgle" />
       </div>
       <img src="/assets/img/logo.png" alt="" />
-      <nav>
-        <ul id="mainmenu">
+      <nav id='myID'>
+        <ul id="mainmenu" onClick={toggleclick}>
           <li>Artists</li>
           <li>Developers</li>
           <li>sản phẩm</li>
@@ -195,12 +220,13 @@ export default function Home() {
           <p>you interview them and invite them into your ranks for world demonation</p>
           <h1>LFG</h1>
           <img src="/assets/img/ninja2.png" alt="" />
-          <h4>Featured Artists</h4>
+          {/* <h4>Featured Artists</h4> */}
         </div>
       </div>
       
       <div className='content4'>
         <div className=''><p id="demo" >i have been an illustrator for over 15 years, but only recently been designing NFT’s. previously design manager at apple but now i am designing for th...</p></div>
+        <p className="p-feature p-feature2">Featured developers</p>
         <Slider
         nextArrow={<Next type="next" />}
         prevArrow={<Prev type="prev" />}
@@ -214,6 +240,7 @@ export default function Home() {
       </Slider>
       </div>
       <div className="content5">
+      <div className=''><p id="demo2" >my skills range from developing more simple user interfaces to full scale back-end solutions for world renowned clients globally. I have worked for...</p></div>
         <p className="p-feature">Featured developers</p>
             <Slider
             nextArrow={<Next type="next" />}
@@ -228,6 +255,7 @@ export default function Home() {
         </div>
 
         <div className="content6">
+        <div className=''><p id="demo3" >when it comes to keeping a community in order I have the perfect skills. i have worked with many top projects and no how to handle both hype and normal p...</p></div>
         <p className="p-feature">Featured developers</p>
             <Slider
             nextArrow={<Next type="next" />}

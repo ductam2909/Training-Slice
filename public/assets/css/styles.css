@@ -38,8 +38,17 @@ nav li{
     padding: 10px;
     width: 100px;
     text-align: center;
+    font-family: 'Source Code Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: right;
+    text-transform: lowercase;
 }
-
+.show-example{
+    display: inline-block;
+}
 nav li:hover{
    color: #E8A929;
 }
@@ -315,7 +324,7 @@ p{color: #fff;}
 }
 .content3-e p{
     position: absolute;
-    bottom: -80px;
+    bottom: -60px;
     left: 20px;
     width: 225px;
     line-height: 24px;
@@ -352,6 +361,7 @@ p{color: #fff;}
     left: -480px;
     color: #fff;
     font-size: 16px;
+
    
 }
 
@@ -745,8 +755,51 @@ color: #000000;
     border-top: 2px solid #A2A2A2;
 }
 
-
+#demo{
+    position: relative;
+    top: -25vh;
+    width: 375px;
+    margin: -50px;
+    left: 580px;
+    color: #000;
+    height: 80px;
+    font-weight: 700;
+    text-transform: lowercase;
 }
+#demo2{
+    position: relative;
+    top: -20vh;
+    width: 375px;
+    margin: -35px;
+    left: 350px;
+    color: #000;
+    height: 80px;
+    font-weight: 700;
+    text-transform: lowercase;
+}
+#demo3{
+    position: relative;
+    top: -25vh;
+    width: 375px;
+    margin: -50px;
+    left: 630px;
+    color: #000;
+    height: 80px;
+    font-weight: 700;
+    text-transform: lowercase;
+}
+.p-feature{
+    margin-left: 20px;
+    text-align: left;
+}
+.p-feature2{
+    position: relative;
+    top: -40px;
+    color: #fff;
+}
+}
+
+
 
 
 
@@ -838,14 +891,10 @@ button{
          width: 95vw;
          left: 10px;
          display: none;
-         height: 200px;
+         height: 250px;
          background-color: #95afc0;
      }
-     nav li:hover{
-         /* background-color: #E8A929; */
-         width: 90vw;
-      }
-
+     
     .content1 img,.content3-e img{
         width: 300px;
     }
@@ -992,7 +1041,7 @@ button{
         margin-top: 80px;
     }
     .p-feature{
-        margin-bottom: 20px;
+        margin-bottom: 20px; 
     }
     .content5-a{
      
@@ -1284,5 +1333,8 @@ button{
     width: 300px;
 }
 
+#demo3 ,#demo2{
+    display: none;
+}
 
   }
